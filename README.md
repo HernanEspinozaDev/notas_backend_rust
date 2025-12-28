@@ -22,8 +22,8 @@ Fue desarrollado como una prueba de concepto para demostrar el rendimiento y la 
 
 1.  **Clonar el repositorio:**
     ```bash
-    git clone <TU_URL_DEL_REPO>
-    cd notas-backend
+    git clone https://github.com/HernanEspinozaDev/notas_backend_rust.git
+    cd notas_backend_rust
     ```
 
 2.  **Crear la tabla en DynamoDB (si no existe):**
