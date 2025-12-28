@@ -1,0 +1,22 @@
+[package]
+name = "notas-backend"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Dependencias Core
+lambda_http = { version = "0.13.0", features = ["apigw_http"] }
+lambda_runtime = "0.13.0"
+http = "1"  # <--- ESTO ES IMPORTANTE PARA EVITAR CONFLICTOS
+
+# AWS SDK
+aws-config = { version = "1", features = ["behavior-version-latest"] }
+aws-sdk-dynamodb = "1"
+
+# Utilidades
+tokio = { version = "1", features = ["macros"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+uuid = { version = "1", features = ["v4"] }
