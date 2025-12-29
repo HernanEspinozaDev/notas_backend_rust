@@ -3,15 +3,16 @@ name = "notas-backend"
 version = "0.1.0"
 edition = "2021"
 
+# --- DEPENDENCIAS ---
 [dependencies]
-# Dependencias Core
+# Core de Lambda
 lambda_http = { version = "0.13.0", features = ["apigw_http"] }
 lambda_runtime = "0.13.0"
-http = "1"  # <--- ESTO ES IMPORTANTE PARA EVITAR CONFLICTOS
+http = "1"
 
-# AWS SDK
-aws-config = { version = "1", features = ["behavior-version-latest"] }
-aws-sdk-dynamodb = "1"
+# --- AWS SDK (CORREGIDO: Agregamos "rt-tokio") ---
+aws-config = { version = "1", default-features = false, features = ["behavior-version-latest", "rustls", "rt-tokio"] }
+aws-sdk-dynamodb = { version = "1", default-features = false, features = ["rustls", "rt-tokio"] }
 
 # Utilidades
 tokio = { version = "1", features = ["macros"] }
